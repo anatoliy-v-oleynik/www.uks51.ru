@@ -1,0 +1,98 @@
+/*--------------------------------------------------------------
+# Frequently Asked Questions
+--------------------------------------------------------------*/
+
+.menu-list {
+  padding: 0 0px;
+}
+
+.menu-list ul.menu {
+  padding: 0;
+  list-style: none;
+}
+
+.menu-list ul.menu li + li {
+  margin-top: 15px;
+}
+
+.menu-list ul.menu li {
+  background: #fff;
+  position: relative;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  margin-right: 45px;
+  margin-bottom: 30px;
+
+}
+
+.menu-list ul.menu a {
+  display: block;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding: 0 0;
+  outline: none;
+  cursor: pointer;
+  color: #000000;
+}
+
+.menu-list .icon-help {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: 20px;
+  color: #8577fb;
+}
+
+.menu-list .icon-show,
+.menu-list .icon-close {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.menu-list ul.menu p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+
+.menu-list .icon-show {
+  display: none;
+}
+
+.menu-list ul.menu a.collapsed {
+  color: #2c4964;
+}
+
+.menu-list ul.menu a.collapsed:hover {
+  color: #5846f9;
+}
+
+.menu-list ul.menu a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.menu-list ul.menu a.collapsed .icon-close {
+  display: none;
+}
+
+
+ul.menu-items li {
+  margin-bottom: 10px;
+}
+
+ul.menu-items li a {
+  font-size: 15px;
+  color: #1f272b;
+  font-weight: 500;
+  transition: all .3s;
+  display: inline-block;
+}
+
+ul.menu-items li a:hover {
+  color: #a12c2f;
+}

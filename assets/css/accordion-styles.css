@@ -1,0 +1,124 @@
+.accordion {
+  margin: 0 auto;
+  -webkit-box-shadow: 0px 10px 24px -11px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: 0px 10px 24px -11px rgba(0, 0, 0, 0.27);
+  box-shadow: 0px 10px 24px -11px rgba(0, 0, 0, 0.27);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.accordion .card,
+.accordion .card:last-child .card-header {
+  border: none;
+  background: transparent;
+}
+
+.accordion .card-header {
+  border: none;
+  background: transparent;
+}
+
+.accordion .card-header .heading {
+  position: relative;
+  font-weight: 300;
+  z-index: 0;
+}
+
+.accordion .card-header .heading h3 {
+  font-size: 16px;
+  margin-bottom: 0;
+  text-align: left;
+	text-decoration: none;
+}
+
+.accordion .fa {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.accordion .btn {
+  width: 100%;
+  font-weight: normal;
+  color: #000;
+  padding: 0;
+  letter-spacing: 0;
+  font-size: 18px;
+  border-radius: 0 !important;
+  border: none;
+  position: relative;
+	background-color: #efefef;
+	text-decoration: none;
+}
+
+.accordion .btn::before {
+  background-color: #efefef;
+}
+
+.accordion .btn i {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.accordion .btn-link:hover {
+	background-color: #efefef;
+  border-top: 1px solid #dee2e6 !important;
+	border-bottom: 1px solid #dee2e6 !important;
+  border-left: 3px solid #654ede;
+  color: #1e4e9a;
+}
+
+.accordion .btn-link:hover i {
+  color: #1e4e9a;
+}
+
+
+.accordion .btn-link:focus {
+	background-color: #efefef;
+  border-top: 1px solid #dee2e6 !important;
+}
+
+.accordion button[aria-expanded="true"] {
+  color: #000 !important;
+  background: #efefef !important;
+  border: none !important;
+  border-left: 3px solid #654ede !important;
+  border-top: 1px solid #dee2e6 !important;
+  border-bottom: 1px solid #dee2e6 !important;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.accordion .card-body {
+	background: #efefef !important;
+	margin-bottom: 1px;
+	border-left: 3px solid #654ede;
+	border-bottom: 1px solid #dee2e6 !important;
+}
+
+.accordion button[aria-expanded="true"] .fa {
+  color: #1e4e9a !important;
+}
+
+.accordion button[aria-expanded="false"] {
+  background-color: #fff;
+}
+
+.accordion .accordion-list-item {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 00px solid #dee2e6;
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(34, 60, 80, 0.1);
+  -moz-box-shadow: 0px 0px 5px 2px rgba(34, 60, 80, 0.1);
+  box-shadow: 0px 0px 5px 2px rgba(34, 60, 80, 0.1);
+  padding: 5px 10px 5px 10px;
+	background-color: #fff;
+}
+
+.accordion .accordion-list-item a {
+  color: rgba(33, 37, 41, 0.75);
+}
+
+.accordion .accordion-list-item a:hover {
+  color: rgb(29, 103, 164);
+}

@@ -1,0 +1,89 @@
+/* 
+---------------------------------------------
+owl-partners
+--------------------------------------------- 
+*/
+
+.owl-partners {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: transparent;
+}
+
+.owl-partners-item .item {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #f1eeed;
+  border-bottom: 1px solid #f1eeed;
+  overflow: hidden;
+  background: #ffffff4f;
+  height: 130px;
+}
+
+/* 
+---------------------------------------------
+owl-objects
+--------------------------------------------- 
+*/
+
+.owl-objects {
+  margin: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background-color: #000000;
+}
+
+
+/* 
+---------------------------------------------
+owl-sites
+--------------------------------------------- 
+*/
+
+.owl-sites {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: transparent;
+}
+
+.owl-sites-item .item {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #f1eeed;
+  border-bottom: 1px solid #f1eeed;
+  overflow: hidden;
+  background: #ffffff4f;
+  height: 130px;
+}
+
+.owl-sites-item .item .img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 6.5s ease-in-out;
+  -webkit-transition: all 6.5s ease-in-out;
+  -o-transition: all 6.5s ease-in-out;
+  -ms-transition: all 6.5s ease-in-out;
+}
+
+.owl-sites-item .item:hover img {
+  opacity: 0.9;
+  transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -webkit-transform: scale(1.15);
+  -o-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+}
