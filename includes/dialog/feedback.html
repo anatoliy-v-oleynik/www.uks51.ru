@@ -1,0 +1,45 @@
+  <!-- ======= Feedback modal ======= -->
+  <div id="feedback-modal" class="modal fade" style="z-index: 1112" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">СВЯЖИТЕСЬ С НАМИ</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="feedback-recipient-name" placeholder="Введите Ваш имя">
+              <label class="text-muted" for="feedback-recipient-name">Ваше имя:</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="feedback-recipient-email"
+                placeholder="Введите Ваш адрес электронной почты">
+              <label class="text-muted" for="feedback-recipient-email">Адрес электронной почты:</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select class="form-select" id="feedback-subject" aria-label="Выберите тему обращения">
+                <option class="text-muted">Выберите тему Вашего обращения</option>
+                <option value="1">Переселением из районов Крайнего Севера</option>
+                <option value="2">Противодействие коррупции</option>
+                <option value="3">Прочее</option>
+              </select>
+              <label class="text-muted" for="floatingSelect">Тема вашего обращения</label>
+            </div>
+            <div class="form-floating mb-3">
+              <textarea class="form-control" placeholder="Введите текст Вашего обращения" id="feedback-message" style="height: 100px"></textarea>
+              <label class="text-muted" for="feedback-message">Текст вашего обращения</label>
+            </div>
+            <div class="mb-3">
+              <h6>Условия использования</h6>
+              <p>Нажимая на кнопку "Отправить", Вы даете согласие на обработку своих персональных данных в соответствии с требованиями федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» и соглашаетесь с условиями<a href="#" data-bs-toggle="modal" data-bs-target="#privacy-modal" title="Политика конфиденциальности"> политики конфиденциальности.</a></p>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Отправить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ======= End Feedback modal ======= -->

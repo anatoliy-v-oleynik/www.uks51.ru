@@ -1,0 +1,115 @@
+<div class="thumb">
+  <img src="assets/images/objects-banner2.jpg" alt="">
+</div>
+<div class="down-content container-fluid px-3 m-0">
+  <div class="description row pb-4 border-bottom">
+    <h4 class="mb-3">Объекты строительства</h4>
+    <p>В соответствии с Федеральным законом от 25 декабря 2008 г. № 273-ФЗ «О противодействии коррупции» противодействие коррупции</p> 
+  </div>
+
+  <div id="object-member-carousel" class="carousel slide row" data-ride="carousel">
+    <div class="carousel-inner col-lg-12"></div>
+    <div class="pagination col-lg-12"></div>
+  </div>  
+</div>
+
+<script>
+
+(function ($) {
+	
+	"use strict";
+
+  document.querySelector('#object-member-carousel').addEventListener('slide.bs.carousel', function (e) {
+    $('#object-member-carousel .pagination button').removeClass('active');
+    $('#object-member-carousel .pagination button[data-bs-slide-to="' + e.to + '"]').addClass('active');
+    audio_scroll.play();
+  });
+
+  document.querySelector('#object-member-carousel').addEventListener('slid.bs.carousel', function (e) {
+	  document.location = "#about";
+  });
+
+
+  var oReq = new XMLHttpRequest();
+  oReq.open("GET", "./data/objects.xlsx", true);
+  oReq.responseType = "arraybuffer";
+  oReq.onload = function(e) {
+
+    var workbook = XLSX.read(oReq.response, { type: 'array' });
+    var cameras = XLSX.utils.sheet_to_row_object_array(workbook.Sheets["Камеры"]);
+    var objects = XLSX.utils.sheet_to_row_object_array(workbook.Sheets["Объекты"]);
+
+    var omc_inner = document.querySelector('#object-member-carousel .carousel-inner');
+    var omc_pagination = document.querySelector('#object-member-carousel .pagination');
+    var current_item_index = 0;
+
+    for (var i = 0; i < Math.ceil(objects.length / 3); i++)
+    {
+      var element = document.createElement('div');
+      element.setAttribute("class", (i == 0) ? "carousel-item active" : "carousel-item");
+      omc_inner.appendChild(element);
+
+      for (var i1 = 0; i1 < 3; i1++)
+      {
+        if (current_item_index >= objects.length) break;
+
+        element.insertAdjacentHTML('beforeEnd', 
+        '<div class="member border col-lg-12 mt-3">'+
+        ' <div class="row m-1">'+
+        '   <div class="pic col-lg-4"><img src="' + objects[current_item_index]["Ссылка на картинку"] + '" class="img-fluid" alt=""></div>'+
+        '   <div class="member-info col-lg-8">' +
+        '     <h4>' + objects[current_item_index]["Наименование"] + '</h4>' +
+        '     <span>' + objects[current_item_index]["Подзаголовок"] + '</span>' +
+        '     <p>' + objects[current_item_index]["Краткое описание"] + '</p>' +
+        '     <div class="social">' +
+        '       <a data-bs-toggle="collapse" href="#object' + current_item_index + '-cameras-collapse" role="button" aria-expanded="false"><i class="fa fa-camera"></i></a>' +
+        '       <a data-bs-toggle="modal" data-bs-target="#object-info-modal"><i class="fa fa-info"></i></a>' +
+        '     </div>' +
+        '   </div>' +
+        ' </div>' +
+        ' <div class="row pt-2 mt-2">' +
+        '   <div class="collapse d-flex flex-row justify-content-center border-top" id="object' + current_item_index + '-cameras-collapse" aria-label="' + objects[current_item_index]["Наименование"] + '"></div>' +
+        ' </div>' +
+        '</div>');
+
+        current_item_index++;
+      }
+
+      omc_pagination.insertAdjacentHTML('beforeEnd', '<button type="button" data-bs-target="#object-member-carousel" data-bs-slide-to="' + i + '" aria-label="Страница 2">' + (i+1) + '</button>');
+    }
+
+    var member_objects_cameras = document.querySelectorAll('#object-member-carousel .collapse');
+
+    member_objects_cameras.forEach(object_cameras => {
+
+      object_cameras.addEventListener("show.bs.collapse", (e) => {
+        var shown_cameras = document.querySelectorAll('#object-member-carousel .collapse.show');
+        shown_cameras.forEach(row => {
+          let bsCollapse = bootstrap.Collapse.getInstance(row);
+          bsCollapse.hide();
+        });
+      }); 
+
+      object_cameras.addEventListener("shown.bs.collapse", (e) => {
+
+        var rows = cameras.filter((row) => row["Наименование"] == e.currentTarget.getAttribute("aria-label"));
+
+        rows.forEach(row => {
+          var element = document.createElement('div');
+          element.setAttribute("class", 'ms-2 mt-2');
+          element.setAttribute("style", "width: 320px; height: 240px;");
+          element.innerHTML = '<iframe class="p-0 m-0" width="100%" height="100%" src="' + row["Ссылка"] + '" frameborder="0" allowfullscreen></iframe>';
+          e.currentTarget.appendChild(element);
+        });
+      });
+
+      object_cameras.addEventListener("hidden.bs.collapse", (e) => {
+        e.currentTarget.replaceChildren();
+      });    
+    });
+  }
+  oReq.send();
+
+})(window.jQuery);
+
+</script>
